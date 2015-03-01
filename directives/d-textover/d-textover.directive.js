@@ -42,8 +42,6 @@ function dTextover($timeout) {
     function link(scope, element, attributes) {
         var input = element.parent().find("input");
 
-        console.log(input.val());
-
         scope.class =
             attributes.hasOwnProperty("right")
             ? "d-over-right"

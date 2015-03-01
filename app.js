@@ -7,8 +7,6 @@ app.controller("main", main);
 function main() {
     var vm = this;
 
-    console.log("GAVE HALF TO LARRY");
-
     this.Left = "here";
     this.Right = "there";
     this.Input1 = "";

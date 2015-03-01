@@ -28,8 +28,6 @@ function dSpinner($interval) {
     return directive;
 
     function link(scope) {
-        console.log("SPINNER");
-
         scope.$watch("show", onShowChange);
 
         scope.style = {
