@@ -1,0 +1,26 @@
+﻿.d-textover-box input {
+    background-color: transparent;
+    z-index: 5;
+}
+
+.d-textover-box input,
+.d-textover-box .d-over-left,
+.d-textover-box .d-over-right {
+    position: absolute;
+}
+
+.d-textover-box .d-over-left,
+.d-textover-box .d-over-right {
+    width: 100%;
+    margin-top: 6px;
+    color: #AAA;
+}
+
+.d-textover-box .d-over-left {
+    padding-left: 13px;
+}
+
+.d-textover-box .d-over-right {
+    padding-right: 8px;
+    text-align: right;
+}

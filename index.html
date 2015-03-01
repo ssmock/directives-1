@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.14/angular.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet" data-semver="3.3.1" data-require="bootstrap-css@*" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+</head>
+<body ng-app="app">
+    <header>
+        <h2>Look!</h2>
+    </header>
+    <div ng-controller="main as main">
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="thing">Thing</label>
+                <div class="col-sm-6">
+                    <div class="d-textover-box">
+                        <input type="text" id="thing" class="form-control"
+                               ng-model="main.Input1" />
+                        <d-textover left hide-with-input>
+                            LEFT: <span ng-bind="main.Left"></span>
+                        </d-textover>
+                        <d-textover right>
+                            RIGHT: <span ng-bind="main.Right"></span>
+                        </d-textover>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2">Left</label>
+                <div class="col-sm-6">
+                    <input ng-model="main.Left" placeholder="yes" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2">Right</label>
+                <div class="col-sm-6">
+                    <input ng-model="main.Right" />
+                </div>
+            </div>
+        </form>
+        <div ng-repeat="thing in main.Things">
+            <span ng-bind="$index"></span>
+            thing!
+        </div>
+    </div>
+</body>
+</html>
