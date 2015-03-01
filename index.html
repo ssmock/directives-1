@@ -4,7 +4,7 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.14/angular.js"></script>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet" data-semver="3.3.1" data-require="bootstrap-css@*" />
     <link rel="stylesheet" href="style.css" />
-    <script src="script.js"></script>
+    <link href="directives/d-textover/d-textover.style.css" rel="stylesheet" />
 </head>
 <body ng-app="app">
     <header>
@@ -23,6 +23,7 @@
                         </d-textover>
                         <d-textover right>
                             RIGHT: <span ng-bind="main.Right"></span>
+                            <d-spinner show="true"></d-spinner>
                         </d-textover>
                     </div>
                 </div>
@@ -45,5 +46,8 @@
             thing!
         </div>
     </div>
+    <script src="app.js"></script>
+    <script src="directives/d-spinner/d-spinner.directive.js"></script>
+    <script src="directives/d-textover/d-textover.directive.js"></script>
 </body>
 </html>

@@ -1,9 +1,13 @@
-﻿var app = angular.module("app", []);
+﻿"use strict";
+
+var app = angular.module("app", []);
 
 app.controller("main", main);
 
 function main() {
     var vm = this;
+
+    console.log("GAVE HALF TO LARRY");
 
     this.Left = "here";
     this.Right = "there";
