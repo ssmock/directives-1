@@ -93,19 +93,15 @@ function dScaleHead($window) {
                 $window.pageYOffset
                 || $window.document.documentElement.scrollTop;
 
-            console.log(scrollPosition, height, scrollPosition > height)
-
             if (scrollPosition > height) makeSmall();
             else makeLarge();
         }
 
         function makeSmall() {
-            console.log("MAKE SMALL");
             scope.headerClass = BELOW_CLASS;
         }
 
         function makeLarge() {
-            console.log("MAKE LARGE");
             scope.headerClass = ABOVE_CLASS;
 
         }

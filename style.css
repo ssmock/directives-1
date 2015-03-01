@@ -5,28 +5,28 @@
 
 .d-scale-head-above {
     height: 100px;
-    transition: height 0.25s;
-    -webkit-transition: height 0.25s;
-    -moz-transition: height 0.25s;
-    -ms-transition: height 0.25s;
-    -o-transition: height 0.25s;
+    transition: height 0.1s;
+    -webkit-transition: height 0.1s;
+    -moz-transition: height 0.1s;
+    -ms-transition: height 0.1s;
+    -o-transition: height 0.1s;
 }
 
 .d-scale-head-below {
     height: 50px;
-    transition: height 0.25s;
-    -webkit-transition: height 0.25s;
-    -moz-transition: height 0.25s;
-    -ms-transition: height 0.25s;
-    -o-transition: height 0.25s;
+    transition: height 0.1s;
+    -webkit-transition: height 0.1s;
+    -moz-transition: height 0.1s;
+    -ms-transition: height 0.1s;
+    -o-transition: height 0.1s;
 }
     
 .d-scale-head-below .scale-me {
-    transform: scale(.75, .75) translateY(-15%);
-    -webkit-transform: scale(.75, .75) translateY(-15%);
-    -moz-transform: scale(.75, .75) translateY(-15%);
-    -ms-transform: scale(.75, .75) translateY(-15%);
-    -o-transform: scale(.75, .75) translateY(-15%);
+    transform: scale(.65, .65) translateY(-20px);
+    -webkit-transform: scale(.65, .65) translateY(-20px);
+    -moz-transform: scale(.65, .65) translateY(-20px);
+    -ms-transform: scale(.65, .65) translateY(-20px);
+    -o-transform: scale(.65, .65) translateY(-20px);
     transition: transform 0.25s;
     -webkit-transition: transform 0.25s;
     -moz-transition: transform 0.25s;
