@@ -20,7 +20,7 @@
  *           <div class="col-sm-4">Stuff on the left</div>
  *           <div class="scale-me col-sm-4 text-center">
  *               ASD
- *               <img class="scale-me" width="90" src="http://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Penrose-dreieck.svg/2000px-Penrose-dreieck.svg.png" />
+ *               <img class="scale-me" width="90" src="some-image.png" />
  *               FAS
  *           </div>
  *           <div class="col-sm-4 text-right">Stuff on the right</div>
