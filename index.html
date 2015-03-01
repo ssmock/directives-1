@@ -51,6 +51,21 @@
                     <input ng-model="main.Right" />
                 </div>
             </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2">
+                    Check
+                    <d-check-glyph is-ok="main.Check1.Ok" is-bad="main.Check1.Bad"></d-check-glyph>
+                </label>
+                <div class="col-sm-6">
+                    <button ng-click="main.Check1.OkIt()">OK</button>
+                    <button ng-click="main.Check1.BadIt()">BAD</button>
+                    <button ng-click="main.Check1.CancelIt()">Nothing</button>
+                    <button ng-click="main.Check1.BothIt()">Both</button>
+                    <div>
+                        {{main.Check1 | json}}
+                    </div>
+                </div>
+            </div>
         </form>
         <div ng-repeat="thing in main.Things">
             <span ng-bind="$index"></span>
@@ -61,5 +76,6 @@
     <script src="directives/d-spinner/d-spinner.directive.js"></script>
     <script src="directives/d-textover/d-textover.directive.js"></script>
     <script src="directives/d-scale-head/d-scale-head.directive.js"></script>
+    <script src="directives/d-check-glyph/d-check-glyph.directive.js"></script>
 </body>
 </html>
