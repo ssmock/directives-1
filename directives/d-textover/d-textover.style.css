@@ -1,26 +1,21 @@
-﻿.d-textover-box input {
+﻿.fs-textover-box input {
     background-color: transparent;
-    z-index: 5;
 }
 
-.d-textover-box input,
-.d-textover-box .d-over-left,
-.d-textover-box .d-over-right {
+.fs-textover-box .fs-over-left,
+.fs-textover-box .fs-over-right {
     position: absolute;
-}
-
-.d-textover-box .d-over-left,
-.d-textover-box .d-over-right {
+    z-index: -1;
     width: 100%;
-    margin-top: 7px;
+    margin-top: -27px;
     color: #AAA;
 }
 
-.d-textover-box .d-over-left {
+.fs-textover-box .fs-over-left {
     padding-left: 13px;
 }
 
-.d-textover-box .d-over-right {
-    padding-right: 8px;
+.fs-textover-box .fs-over-right {
+    right: 24px;
     text-align: right;
 }
