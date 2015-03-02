@@ -20,6 +20,13 @@ function main() {
         BothIt: bothIt
     };
 
+    vm.EditableThing = {
+        Items: [1,2,3]
+    };
+
+    MakeEditable(vm.EditableThing, ["Items"]);
+    vm.EditableThing.StartEdit();
+
     for (var i = 0; i < 100; i++) vm.Things.push(i);
 
     function okIt() {

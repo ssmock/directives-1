@@ -1,0 +1,23 @@
+﻿<div>
+    <form novalidate>
+        <input type="submit" ng-click="vm.Add()" ng-show="false"
+               ng-disabled="vm.List[vm.List.length - 1].IsInvalid" />
+        <ul class="list-unstyled">
+            <li ng-repeat="it in vm.List track by $index" class="input-group">
+                <input type="text" class="form-control"
+                       ng-model="it.Value"
+                       ng-change="vm.Sync()" />
+                <div ng-if="$last" class="input-group-btn">
+                    <button class="btn glyphicon glyphicon-plus"
+                            ng-class="it.IsInvalid ? '' : 'btn-success'"
+                            ng-disabled="it.IsInvalid"
+                            ng-click="vm.Add()"></button>
+                </div>
+                <div ng-if="!$last" class="input-group-btn">
+                    <button class="btn btn-danger glyphicon glyphicon-trash"
+                            ng-click="vm.RemoveAt($index)"></button>
+                </div>
+            </li>
+        </ul>
+    </form>
+</div>
