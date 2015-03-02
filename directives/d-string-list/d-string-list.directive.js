@@ -78,7 +78,8 @@ function dStringList($timeout) {
                 });
             });
 
-            addNew();
+            if (vm.List.length === 0) addNew();
+
             validateAll();
         }
 
