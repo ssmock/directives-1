@@ -8,17 +8,18 @@
                        ng-model="it.Value"
                        ng-change="vm.Sync()" />
                 <span ng-show="it.IsInvalid"
-                      style="position: absolute; top: 10px; right: 50px; z-index: 10; color: #d00;"
+                      ng-style="{ right: $last && vm.List.length !== 1 ? '90px' : '45px' }"
+                      style="position: absolute; top: 10px; z-index: 10; color: #a94442;"
                       class="glyphicon glyphicon-exclamation-sign">
                 </span>
-                <div ng-if="$last" class="input-group-btn">
-                    <button class="btn glyphicon glyphicon-plus"
+                <div class="input-group-btn">
+                    <button ng-if="$last"
+                            class="btn glyphicon glyphicon-plus"
                             ng-class="it.IsInvalid ? '' : 'btn-success'"
                             ng-disabled="it.IsInvalid"
                             ng-click="vm.Add()"></button>
-                </div>
-                <div ng-if="!$last" class="input-group-btn">
-                    <button class="btn btn-danger glyphicon glyphicon-trash"
+                    <button ng-if="!$last || vm.List.length !== 1"
+                            class="btn btn-danger glyphicon glyphicon-trash"
                             ng-click="vm.RemoveAt($index)"></button>
                 </div>
             </li>

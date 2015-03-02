@@ -69,6 +69,8 @@ function dStringList($timeout) {
         }
 
         function render() {
+            vm.List = [];
+
             _.each(ngModel.$viewValue, function (it) {
                 vm.List.push({
                     Value: it.toString(),

@@ -17,10 +17,10 @@ angular.module("app").directive("dCheckGlyph", dCheckGlyph);
 
 function dCheckGlyph() {
     var OK_CLASS = "glyphicon-ok";
-    var OK_COLOR = "#0d0";
+    var OK_COLOR = "#3c763d";
 
     var BAD_CLASS = "glyphicon-exclamation-sign";
-    var BAD_COLOR = "#d00";
+    var BAD_COLOR = "#a94442";
 
     var scope = {
         IsOk: "=isOk",
