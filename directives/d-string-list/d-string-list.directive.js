@@ -36,12 +36,15 @@ function dStringList($timeout) {
     return directive;
 
     function link(scope, element, attributes, ngModel) {
+        var ENTER_KEY = 13;
+
         var vm = {};
 
         vm.List = [];
         vm.Add = add;
         vm.RemoveAt = removeAt;
         vm.Sync = sync;
+        vm.HandleEnter = handleEnter;
 
         var pattern =
             scope.validPattern ? new RegExp(scope.validPattern) : null;
@@ -65,10 +68,10 @@ function dStringList($timeout) {
             if (allValid) {
                 value = _.pluck(vm.List, "Value");
             }
-            else if(cullInvalids) {
+            else if (cullInvalids) {
                 value = _.chain(vm.List)
                     .where({ IsInvalid: false })
-                    .pluck(vm.List, "Value")
+                    .pluck("Value")
                     .value();
             }
 
@@ -142,6 +145,17 @@ function dStringList($timeout) {
             var inputs = element.find("input");
 
             inputs[inputs.length - 1].focus();
+        }
+
+        function handleEnter(event) {
+            if (event) {
+                if (event.keyCode === ENTER_KEY
+                    && !vm.List[vm.List.length - 1].IsInvalid) {
+                    add();
+                }
+            }
+
+            return false;
         }
     }
 }

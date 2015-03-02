@@ -1,28 +1,25 @@
 ﻿<div>
-    <form novalidate>
-        <input type="submit" ng-click="vm.Add()" ng-show="false"
-               ng-disabled="vm.List[vm.List.length - 1].IsInvalid" />
-        <ul class="list-unstyled">
-            <li ng-repeat="it in vm.List track by $index" class="input-group">
-                <input type="text" class="form-control"
-                       ng-model="it.Value"
-                       ng-change="vm.Sync()" />
-                <span ng-show="it.IsInvalid"
-                      ng-style="{ right: $last && vm.List.length !== 1 ? '90px' : '45px' }"
-                      style="position: absolute; top: 10px; z-index: 10; color: #a94442;"
-                      class="glyphicon glyphicon-exclamation-sign">
-                </span>
-                <div class="input-group-btn">
-                    <button ng-if="$last"
-                            class="btn glyphicon glyphicon-plus"
-                            ng-class="it.IsInvalid ? '' : 'btn-success'"
-                            ng-disabled="it.IsInvalid"
-                            ng-click="vm.Add()"></button>
-                    <button ng-if="!$last || vm.List.length !== 1"
-                            class="btn btn-danger glyphicon glyphicon-trash"
-                            ng-click="vm.RemoveAt($index)"></button>
-                </div>
-            </li>
-        </ul>
-    </form>
+    <ul class="list-unstyled">
+        <li ng-repeat="it in vm.List track by $index" class="input-group">
+            <input type="text" class="form-control"
+                   ng-model="it.Value"
+                   ng-change="vm.Sync()"
+                   ng-keydown="vm.HandleEnter($event)" />
+            <span ng-show="it.IsInvalid"
+                  ng-style="{ right: $last && vm.List.length !== 1 ? '90px' : '45px' }"
+                  style="position: absolute; top: 10px; z-index: 10; color: #a94442;"
+                  class="glyphicon glyphicon-exclamation-sign">
+            </span>
+            <div class="input-group-btn">
+                <button ng-if="$last"
+                        class="btn glyphicon glyphicon-plus"
+                        ng-class="it.IsInvalid ? '' : 'btn-success'"
+                        ng-disabled="it.IsInvalid"
+                        ng-click="vm.Add()"></button>
+                <button ng-if="!$last || vm.List.length !== 1"
+                        class="btn btn-danger glyphicon glyphicon-trash"
+                        ng-click="vm.RemoveAt($index)"></button>
+            </div>
+        </li>
+    </ul>
 </div>
