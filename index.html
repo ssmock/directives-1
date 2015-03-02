@@ -23,15 +23,18 @@
     <hr />
     <div ng-controller="main as main">
         <div>
-            Email
+            Emails (<span ng-bind="main.Emails.length"></span>)
         </div>
         <d-string-list ng-model="main.Emails" valid-pattern="{{main.EmailRegex}}">
         </d-string-list>
+        <hr />
         <div>
-            Phone
+            Phone (<span ng-bind="main.Phones.length"></span>)
         </div>
-        <d-string-list ng-model="main.Phones" valid-pattern="{{main.PhoneRegex}}">
+        <d-string-list ng-model="main.Phones" 
+                       valid-pattern="{{main.PhoneRegex}}" cull-invalids>
         </d-string-list>
+        <hr />
         <br />
         <d-string-list ng-model="main.EditableThing.Ed.Items"
                        unique valid-pattern="a">

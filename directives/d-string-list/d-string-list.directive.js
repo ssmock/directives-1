@@ -1,7 +1,8 @@
 ﻿/**
  * Provides a way to edit a simple list of strings, accessed via ngModel, which 
  * can be required to confirm to an attribute-specifed, and which can be 
- * required to be unique.
+ * required to be unique.  By default, any invalid entry results in a bad list,
+ * but this can be overridden via the cull-invalids flag attribute.
  * 
  * Useful for entry of very simple lists, like phone numbers or email 
  * addresses.
@@ -45,7 +46,7 @@ function dStringList($timeout) {
         var pattern =
             scope.validPattern ? new RegExp(scope.validPattern) : null;
         var unique = attributes.hasOwnProperty("unique");
-        var allValid = false;
+        var cullInvalids = attributes.hasOwnProperty("cullInvalids");
 
         // ngModel implementation requirement
         ngModel.$render = render;
@@ -59,13 +60,19 @@ function dStringList($timeout) {
 
         function sync() {
             var allValid = validateAll();
+            var value = null;
 
             if (allValid) {
-                ngModel.$setViewValue(_.pluck(vm.List, "Value"));
+                value = _.pluck(vm.List, "Value");
             }
-            else {
-                ngModel.$setViewValue(null);
+            else if(cullInvalids) {
+                value = _.chain(vm.List)
+                    .where({ IsInvalid: false })
+                    .pluck(vm.List, "Value")
+                    .value();
             }
+
+            ngModel.$setViewValue(value);
         }
 
         function render() {
