@@ -23,8 +23,16 @@
     <hr />
     <div ng-controller="main as main">
         <div>
-            {{main.EditableThing | json}}
+            Email
         </div>
+        <d-string-list ng-model="main.Emails" valid-pattern="{{main.EmailRegex}}">
+        </d-string-list>
+        <div>
+            Phone
+        </div>
+        <d-string-list ng-model="main.Phones" valid-pattern="{{main.PhoneRegex}}">
+        </d-string-list>
+        <br />
         <d-string-list ng-model="main.EditableThing.Ed.Items"
                        unique valid-pattern="a">
         </d-string-list>

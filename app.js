@@ -24,6 +24,12 @@ function main() {
         Items: [1,2,3]
     };
 
+    vm.Emails = [];
+    vm.Phones = [];
+
+    vm.EmailRegex = "\\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}\\b";
+    vm.PhoneRegex = "\\b[(]{0,1}[0-9]{3}[)]{0,1}[-\\s\\.]{0,1}[0-9]{3}[-\\s\\.]{0,1}[0-9]{4}\\b";
+
     MakeEditable(vm.EditableThing, ["Items"]);
     vm.EditableThing.StartEdit();
 
